@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c985b5e-4cf3-4c68-9518-0b0cc9d7aa53" name="Default Changelist" comment="" />
+    <list default="true" id="9c985b5e-4cf3-4c68-9518-0b0cc9d7aa53" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/协同过滤.docx" beforeDir="false" afterPath="$PROJECT_DIR$/协同过滤.docx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +30,9 @@
       </state>
     </system>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -40,7 +46,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../starGAN/stargan-master" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -120,6 +126,7 @@
       <workItem from="1586853211628" duration="16493000" />
       <workItem from="1586923272190" duration="1139000" />
       <workItem from="1587088132646" duration="7000" />
+      <workItem from="1587113139139" duration="213000" />
     </task>
     <servers />
   </component>
@@ -131,10 +138,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2610" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1586827925289" />
-    <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1586848355117">
+    <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1587113364551">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2660" y="275" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1586848355117" />
+    <state x="2660" y="275" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1587113364551" />
     <state width="1877" height="121" key="GridCell.Tab.0.bottom" timestamp="1586914151392">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -151,9 +158,9 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="121" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1586914151392" />
-    <state x="2560" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1587088132953">
+    <state x="2560" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1587113140591">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2560" y="344" key="com.intellij.ide.util.TipDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1587088132953" />
+    <state x="2560" y="344" key="com.intellij.ide.util.TipDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1587113140591" />
   </component>
 </project>

@@ -1,0 +1,21 @@
+{
+  "id": "1985",
+  "description": "Default settings",
+  "engineFactory": "movieRecommend.RecommendationEngine",
+  "datasource": {
+    "params" : {
+      "appName": "videoRec"
+    }
+  },
+  "algorithms": [
+    {
+      "name": "als",
+      "params": {
+        "rank": 10,
+        "numIterations": 20,
+        "lambda": 0.01,
+        "seed": 3
+      }
+    }
+  ]
+}

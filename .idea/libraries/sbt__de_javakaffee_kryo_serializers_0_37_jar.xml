@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="sbt: de.javakaffee:kryo-serializers:0.37:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/de.javakaffee/kryo-serializers/bundles/kryo-serializers-0.37.jar!/" />
+    </CLASSES>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/de.javakaffee/kryo-serializers/srcs/kryo-serializers-0.37-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

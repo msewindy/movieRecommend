@@ -1,0 +1,1 @@
+curl -X POST   http://localhost:10001/queries.json   -d '{"userId":"23382","num":20}'

@@ -97,11 +97,12 @@ class ALSAlgorithm(val ap: ALSAlgorithmParams)
     Class.forName("com.mysql.jdbc.Driver")
     logger.info("mysql驱动加载成功")
     val mysqlConnect = DriverManager.getConnection(this.host,  this.user , "YS.123456" )
-    val sql = "select film_id from t_bus_raty where id like " + "\"" + user + "\""
+//    val sql = "select film_id from t_bus_raty where id like " + "\"" + user + "\""
+    val sql = "select *  from t_bus_sys_log where module_id=5 and userId like " + "\"" + user + "\""
     val queryResult = mysqlConnect.createStatement().executeQuery(sql)
     val history = ArrayBuffer[String]()
     while(queryResult.next()){
-      history.+=:(queryResult.getNString(1))
+      history.+=:(queryResult.getNString(6))
     }
     history.toSet
   }
@@ -164,8 +165,11 @@ class ALSAlgorithm(val ap: ALSAlgorithmParams)
   def predict(model: ALSModel, query: Query): PredictedResult = {
     if(query.item.getOrElse("none").equals("none")){
       val user = query.user.getOrElse("none")
+      println("user: " + user)
       //查询用户评分过movie
       val history: Set[String] = getUserRateHistory(user)
+      println("history: " + history.mkString(";"))
+      logger.info("***************************************history num: " + history.size)
       val ord = Ordering.by[(String, Double), Double](_._2).reverse
       val itemIntStringMap: BiMap[Int, String] = model.itemStringIntMap.inverse
       // Convert String ID to Int index for Mllib
@@ -189,6 +193,7 @@ class ALSAlgorithm(val ap: ALSAlgorithmParams)
           val similars: Array[(String, Double)] = getHistorySimilar(queryFeatures, model.productFeaturesMap).map(k => (itemIntStringMap(k._1), k._2)).filter(k => !history.contains(k._1))
           val similarTopN: Array[(String, Double)] = getTopN(similars, 3 * query.num)(ord).toArray
           val temp = (als ++ similarTopN).groupBy(_._1).map(k => (k._1, k._2.map(s => s._2).sum)).toArray.sortWith(_._2>_._2)
+          println("history similar num: " + temp.length)
           if(temp.length < query.num){
             val re = (temp ++ model.movieSortByRate.take(3 * (query.num - temp.length))).groupBy(_._1).map(k => (k._1, k._2.map(s => s._2).sum)).toArray.sortWith(_._2>_._2)
             PredictedResult(re.map(k => ItemScore(k._1, k._2)))

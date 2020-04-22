@@ -204,7 +204,7 @@ class ALSAlgorithm(val ap: ALSAlgorithmParams)
         }
         else{
           //按评分高低取
-          PredictedResult(model.movieSortByRate.take(query.num).map(k => ItemScore(k._1, k._2)))
+          PredictedResult(model.movieSortByRate.filter(k => !history.contains(k._1)).take(query.num).map(k => ItemScore(k._1, k._2)))
         }
       }
       else {
@@ -212,8 +212,8 @@ class ALSAlgorithm(val ap: ALSAlgorithmParams)
       }
     }
     else {
-      //查询用户评分过movie
       val ord = Ordering.by[(String, Double), Double](_._2).reverse
+      println("item: " + query.item.getOrElse("none"))
       val queryFeatures: Vector[Array[Double]] = Array[Array[Double]](model.productFeaturesMap.getOrElse(model.itemStringIntMap.getOrElse(query.item.getOrElse("none"), -10000),Array.empty)).toVector
       val itemIntStringMap: BiMap[Int, String] = model.itemStringIntMap.inverse
       val similars = getHistorySimilar(queryFeatures, model.productFeaturesMap).map(k => (itemIntStringMap(k._1), k._2)).filter(k => !k._1.equals(query.item.getOrElse("none")))

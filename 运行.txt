@@ -1,0 +1,23 @@
+1.先启动redis ,双击即可：
+2.在启动zookeeper,双击即可：
+3.先输cmd 进入命令行模式，然后启动命令如下：
+E:\ruanjian\kafka_2.11-2.1.0\bin\windows\kafka-server-start.bat E:\ruanjian\kafka_2.11-2.1.0\config\server.properties
+
+
+第一次运行需要这么多步骤：
+启动过程：
+1.确保mongodb 数据库在运行中
+2.先加载数据，右键点击 dataloader ，点击run 
+3.运行StatisticsRecommender，统计模块
+4.运行离线模块 OfflineRecommender 离线模块
+5.运行ItemCFRecommender 模块
+6.运行ContentRecommender 模块
+7.实时模块：
+  先运行  Application
+  在运行  OnlineRecommender
+
+8.最后运行：maven  tomcat:7
+浏览器运行：http://localhost:8088/index.html
+
+
+后面运行只需要7，8步骤，其他不用运行的，如果注册新用户，需要重新运行4
